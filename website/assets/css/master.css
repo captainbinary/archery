@@ -46,6 +46,20 @@ body {
     color: black;
 }
 
+#nav_btn {
+}
+
+.menu-icon > .line {
+    background-color: #a9a9a9;
+    height: 2px;
+    display: block;
+    width: 30px;
+}
+
+.menu-icon > .line + .line {
+    margin-top: 8px;
+}
+
 /* A column container and styles */
 .row {
     display: flex;
@@ -70,7 +84,7 @@ body {
 
 .box {
     max-width: 700px;
-    min-width: 400px;
+    min-width: 200px;
     margin: 40px auto;
     padding: 10px;
 }
