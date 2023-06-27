@@ -76,18 +76,41 @@ body {
 }
 
 /* Footer styles */
+
+
 .footer {
-    padding: 20px;
     text-align: center;
     background-color: #333;
     color: lightgray;
     margin-top: auto;
 }
 
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.fside {
+    flex: 30%;
+    background-color: #333;
+    padding: 20px;
+}
+
+/* Main column */
+.fmain {
+    flex: 70%;
+    background-color: #333;
+    padding: 20px;
+    border-right: 1px inset rgba(0,0,0,.1);
+}
+
+.footer img {
+    height: 50px;
+}
+
+/* Old Styles
 .footer h2 {
     font-size: 11px;
     font-style: italic;
 }
+    */
 
 
 /* Doing a test in same file for now, if its simple than i wont need separate files for widescreen or smallscreen, makes maintaining easier */
