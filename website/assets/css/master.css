@@ -17,17 +17,21 @@ body {
 
 /* Header styles */
 .header {
-    padding:60px;
+    padding: 60px;
     text-align: center;
     background: #1abc9c;
     color: white;
+    text-shadow: 2px 2px 2px #043403;
 }
 
 /* Navigation Base values
 */
 .navbar {
-    background-color: #333;
     display: flex;
+    background: #444444;
+    background: -moz-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
+    background: -webkit-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
+    background: linear-gradient(to bottom, #444444 0%, #333333 75%, #222222 100%);
 }
 
 .navbar a {
@@ -80,29 +84,38 @@ body {
 
 .footer {
     text-align: center;
-    background-color: #333;
     color: lightgray;
     margin-top: auto;
+    font-size: 12px;
+    background: #444444;
+    background: -moz-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
+    background: -webkit-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
+    background: linear-gradient(to bottom, #444444 0%, #333333 75%, #222222 100%);
 }
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .fside {
     flex: 30%;
-    background-color: #333;
     padding: 20px;
 }
 
 /* Main column */
 .fmain {
     flex: 70%;
-    background-color: #333;
     padding: 20px;
-    border-right: 1px inset rgba(0,0,0,.1);
 }
 
 .footer img {
     height: 50px;
+}
+
+.footer h5 {
+    font-style: italic;
+}
+
+.footer a {
+    color: white;
 }
 
 /* Old Styles
