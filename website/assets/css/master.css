@@ -1,90 +1,97 @@
+/*-----------------*/
+/*   MASTER FILE   */
+/*-----------------*/
+
+
+/* Styles affecting base elements */
 * {
     box-sizing: border-box;
 }
 
-/* Style the body, add a flex to keep footer at bottom on low content pages */
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     text-align: center;
-    background-color: white;
-    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'wire one', serif;
+    font-weight: normal;
 }
 
-/* Header styles */
+
+
+/*----------------*/
+/*   HEADER CSS   */
+/*----------------*/
 .header {
-    padding: 10px;
-    text-align: center;
-    background: #199179;
-    color: white;
     margin: 0;
+    padding: 10px;
+    background: #199179;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Title */
+.title {
+    margin: 1%;
+    float: right;
 }
 
 .header h1 {
-    font-weight: normal;
     font-size: 28px;
 }
 
 .header h5 {
-    font-weight: normal;
     font-size: 14px;
 }
 
-
-/* Navigation Base values
-*/
+/* Base Navigation */
 .navbar {
     display: flex;
     background: #199179;
 }
 
-.navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
+    .navbar a {
+        padding: 14px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+    }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
+        .navbar a:hover {
+            background-color: #dddddd;
+            color: #000000;
+        }
 
-#nav_btn {
-}
-
-.menu-icon > .line {
-    background-color: #fbfbfb;
-    height: 2px;
-    display: block;
-    width: 30px;
-}
-
-.menu-icon > .line + .line {
-    margin-top: 8px;
-}
-
+/* Mobile Navigation */
 #nav_btn {
     display: none;
 }
 
-.title {
-    float: right;
-    margin-right: 5%;
-    overflow: auto;
+.menu_icon > .line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fbfbfb;
+}
+
+.menu_icon > .line + .line {
+    margin-top: 8px;
 }
 
 
-/* A column container and styles */
+
+/*---------------------*/
+/*   BODY LAYOUT CSS   */
+/*---------------------*/
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -93,131 +100,117 @@ h1, h2, h3, h4, h5 {
 .main {
     margin: 0;
     padding: 0;
-    width: 100%;
     position: relative;
-}
-
-.fakeimg {
-    background-color: #aaa;
     width: 100%;
-    padding: 20px;
 }
 
-.box {
-    max-width: 720px;
-    min-width: 200px;
-    margin: 0 auto;
-    position: relative;
-}
+    .main h2 {
+        font-size: 24px;
+        text-align: center;
+    }
 
-.colour {
-    color: #fff;
+    .main p {
+        font-size: 14px;
+    }
+
+.padder {
     padding: 1% 20% 2% 20%;
-    background: #199179;
+}
+
+
+
+/*-------------------*/
+/*  SKEWs & COLOURS  */
+/*-------------------*/
+.colour {
+    background-color: #199179;
+    color: #ffffff;
 }
 
 .white {
+    background-color: #ffffff;
     color: #199179;
-    padding: 1% 20% 2% 20%;
-    background: #fff;
 }
 
-.main h2 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: normal;
-}
-
-.main p {
-    font-size: 14px;
-}
-
-/*------------------*/
-/*  SKEW CLOCKWISE  */
-/*------------------*/
-.skew-cc {
+/* Skew Clockwise */
+.skew-c {
+    left: 0;
+    position: relative;
     width: 100%;
     height: 100px;
+    background: linear-gradient(to left bottom, #fff 49%, #199179 50%);
+}
+
+/* Skew Counter Clockwise */
+.skew-cc {
+    left: 0;
     position: relative;
-    left: 0px;
+    width: 100%;
+    height: 100px;
     background: linear-gradient(to right bottom, #199179 49%, #fff 50%), linear-gradient(-50deg, #ffffff 16px, #000 0);
 }
 
 
-/*-------------------------*/
-/* SKEW COUNTER CLOCKWISE  */
-/*-------------------------*/
-.skew-c {
-    width: 100%;
-    height: 100px;
-    position: relative;
-    left: 0px;
-    background: linear-gradient(to left bottom, #fff 49%, #199179 50%);
-}
 
-
-/* Footer styles */
+/*----------------*/
+/*   FOOTER CSS   */
+/*----------------*/
 .footer {
-    text-align: center;
-    color: lightgray;
     margin-top: auto;
+    background: #199179;
+    background: -moz-linear-gradient(top, #199179 0%, #0f5748 100%);
+    background: -webkit-linear-gradient(top, #199179 0%, #0f5748 100%);
+    background: linear-gradient(to bottom, #199179 0%, #0f5748 100%);
     font-size: 12px;
-    background: #444444;
-    background: -moz-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
-    background: -webkit-linear-gradient(top, #444444 0%, #333333 75%, #222222 100%);
-    background: linear-gradient(to bottom, #444444 0%, #333333 75%, #222222 100%);
+    text-align: center;
+    color: #ffffff;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.fside {
-    flex: 30%;
-    padding: 20px;
-}
+    .footer h5 {
+        font-style: italic;
+    }
 
-/* Main column */
-.fmain {
+    .footer a {
+        color: #ffffff;
+    }
+
+    .footer img {
+        height: 50px;
+    }
+
+/* Layout */
+.footer_main {
     flex: 70%;
     padding: 20px;
 }
 
-.footer img {
-    height: 50px;
+.footer_side {
+    flex: 30%;
+    padding: 20px;
 }
 
-.footer h5 {
-    font-style: italic;
-}
-
-.footer a {
-    color: white;
-}
-
-/* Old Styles
-.footer h2 {
-    font-size: 11px;
-    font-style: italic;
-}
-    */
 
 
-/* Slideshow */
-.image_slideshow {
-    max-width: 678px;
-    position: relative;
+/*-------------------*/
+/*   SLIDESHOW CSS   */
+/*-------------------*/
+.slideshow {
     margin: 20px auto;
-    overflow: hidden;
     padding: 0;
+    position: relative;
+    max-width: 678px;
+    overflow: hidden;
 }
 
-.image_slideshow img {
-    width: 100%;
+    .slideshow img {
+        width: 100%;
+    }
+
+.slide {
+    animation: slideIt 1s ease-out 0s 1 normal none;
 }
 
-.fade {
-    animation: moveIt 1s ease-out 0s 1 normal none;
-}
-@keyframes moveIt {
+@keyframes slideIt {
     0% {
         opacity: .5;
         transform: translateX(750px);
@@ -230,77 +223,28 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* -------------------------------------------------------------------------
-   begin Separator
- * ------------------------------------------------------------------------- */
-.separator {
-    top: 350px;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
-}
-/* -------------------------------------------------------------------------
-   end Separator
- * ------------------------------------------------------------------------- */
 
-
-/* Doing a test in same file for now, if its simple than i wont need separate files for widescreen or smallscreen, makes maintaining easier */
+/*--------------------*/
+/*   @MEDIA QUERIES   */
+/*--------------------*/
 @media (max-width: 700px) {
-    .row, .navbar {
-        flex-direction: column;
-    }
-
-    .main {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-
-    .box {
-        border: none;
+    /* Navigation */
+    .navbar a {
+        display: none;
     }
 
     #nav_btn {
         display: block;
     }
+
+    .row, .navbar {
+        flex-direction: column;
+    }
+
+    /* Layout */
+    .main {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
 }
-
-
-
-
-
-/*
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-   float: left;
-}
-
-nav ul li a {
-    display: block;
-    padding: 8px;
-    margin: 0 4px;
-    background-color: brown;
-    width: 80px;
-}
-
-main {
-    height: 75%;
-    padding: 15px;
-    clear: both;
-}
-
-footer {
-    margin-top: auto;
-    background-color: antiquewhite;
-    height: 10%;
-    padding: 5px;
-}
-    */
