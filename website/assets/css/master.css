@@ -25,6 +25,13 @@ h1, h2, h3, h4, h5 {
     font-weight: normal;
 }
 
+a, a:visited, a:link {
+    color: #199156;
+}
+
+a:hover {
+    color: #0f5734;
+}
 
 
 /*----------------*/
@@ -114,6 +121,10 @@ h1, h2, h3, h4, h5 {
 
 .padder {
     padding: 1% 20% 2% 20%;
+}
+
+.spacer {
+    margin: 30px auto;
 }
 
 
@@ -239,11 +250,19 @@ h1, h2, h3, h4, h5 {
     .row, .navbar {
         flex-direction: column;
     }
+}
 
-    /* Layout */
-    .main {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
+@media (min-width: 701px) {
+    /* Navigation */
+    .navbar a {
+        display: block;
+    }
+
+    #nav_btn {
+        display: none;
+    }
+
+    .row, .navbar {
+        flex-direction: row;
     }
 }
