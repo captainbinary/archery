@@ -74,8 +74,13 @@ a:hover {
 
         .navbar a:hover {
             background-color: #dddddd;
-            color: #000000;
+            color: #0f5734;
         }
+
+    .navbar .active {
+        background-color: #dddddd;
+        color: #0f5734;
+    }
 
 /* Mobile Navigation */
 #nav_btn {
@@ -247,8 +252,12 @@ a:hover {
         display: block;
     }
 
-    .row, .navbar {
+    .row, .navbar, .images_horizontal {
         flex-direction: column;
+    }
+
+    .images_horizontal {
+        max-width: 135px!important;
     }
 }
 
@@ -265,4 +274,30 @@ a:hover {
     .row, .navbar {
         flex-direction: row;
     }
+}
+
+
+
+
+/*--------------*/
+/*   MISC CSS   */
+/*--------------*/
+.images_horizontal {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 0;
+    text-align: center;
+    max-width: 540px;
+}
+
+.fake_image {
+    margin: 5px;
+    padding: 0;
+    position: relative;
+    width: 125px;
+    min-width: 125px;
+    height: 125px;
+    min-height: 125px;
+    background-color: #ff0000;
 }
