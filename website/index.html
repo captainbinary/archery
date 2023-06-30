@@ -7,63 +7,65 @@
     <title>West Wight Archery Club</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/master.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (min-width: 701px)" href="assets/css/widescreen.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 700px)" href="assets/css/smallscreen.css" />
 </head>
 <body>
     <!-- Header -->
     <div class="header">
         <div class="title">
             <h1>West Wight Archery Club</h1>
-            <h5>On the Isle Of Wight</h5>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navbar">
+            <a href="#" id="nav_btn">
+                <div class="menu_icon">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </a>
+            <a href="#">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <div class="navbar">
-        <a href="#" id="nav_btn">
-            <div class="menu-icon">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>
-        </a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Courses</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact Us</a>
-    </div>
-
     <!-- Content -->
+    <div class="skew-cc"></div>
     <div class="row">
-        <div class="skew-cc"></div>
         <div class="main">
-            <div class="image_slideshow">
-                <div class="image fade">
-                    <img src="assets/images/slideshow/1.jpg" alt="alt text" />
+            <div class="white padder">
+                <h2>West Wight Archery Club is a welcoming, small community of target archery enthusiasts of all ranges.</h2>
+                <h3>Located Newport, Isle Of Wight.</h3>
+
+                <div class="slideshow">
+                    <div class="image slide">
+                        <img src="assets/images/slideshow/1.jpg" alt="alt text" />
+                    </div>
+                    <div class="image slide">
+                        <img src="assets/images/slideshow/2.jpg" alt="alt text" />
+                    </div>
+                    <div class="image slide">
+                        <img src="assets/images/slideshow/3.jpg" alt="alt text" />
+                    </div>
                 </div>
-                <div class="image fade">
-                    <img src="assets/images/slideshow/2.jpg" alt="alt text" />
-                </div>
-                <div class="image fade">
-                    <img src="assets/images/slideshow/3.jpg" alt="alt text" />
-                </div>
-            </div>
-            <div class="skew-c"></div>
-            <div class="box first colour">
-                <h2>West Wight Archery Club is a small friendly target archery club based in Newport on the Isle of Wight</h2>
 
                 <p>
                     Welcome to the West Wight Archery Club! We are a small and friendly community of archery enthusiasts, ranging from beginners to seasoned experts, united by our love for the ancient sport of archery. Whether you're looking to learn the fundamentals, improve your skills, or simply enjoy the thrill of hitting the bullseye, our club offers a welcoming and supportive environment for archers of all levels.<br /><br />
 
                     At our target archery club, we embrace the timeless discipline of shooting arrows at stationary targets. With carefully measured distances, standardized target faces, and a variety of bows and arrows, target archery offers a structured and competitive approach to the sport.<br /><br />
 
-                    We are also affiliated to Archery GB and the Southern Counties Archery Association.
-                </p>
+                    We are also affiliated to <a href="https://archerygb.org/" target="_blank" title="Archery GB">Archery GB</a> and the <a href="https://scasarchery.org.uk/" target="_blank" title="Southern Counties Archery Society">Southern Counties Archery Association.</a>
+</p>
             </div>
-            <div class="skew-cc"></div>
-            <div class="box white">
+        </div>
+    </div>
+    <div class="skew-c"></div>
+    <div class="row">
+        <div class="main">
+            <div class="colour padder">
                 <h2>Where do we shoot?</h2>
 
                 <p>
@@ -73,6 +75,7 @@
 
                     As the winter season sets in, we transition to shooting at the Island Riding Centre on Thursday evenings.
                 </p>
+                <div class="spacer">&nbsp;</div>
             </div>
         </div>
     </div>
@@ -80,18 +83,18 @@
     <!-- Footer -->
     <div class="footer">
         <div class="row">
-            <div class="fmain">
+            <div class="footer_main">
                 Contact: <a href="mailto:info@westwightac.org?subject=Contact from website">info@westwightac.org</a>
                 <h4>West Wight Archery Club, Copyright &copy; 2023</h4>
             </div>
-            <div class="fside">
+            <div class="footer_side">
                 <a href="https://archerygb.org/" target="_blank" title="Archery GB"><img src="assets/images/archery-gb-logo.jpg" /></a>
                 <a href="https://scasarchery.org.uk/" target="_blank" title="Southern Counties Archery Society"><img src="assets/images/scas_logo.png" /></a>
             </div>
         </div>
     </div>
-
-    <script src="assets/javascript/master.js"></script>
+    <script src="assets/javascript/jquery-3.7.0.min.js"></script>
+    <script src="assets/javascript/navigation.js"></script>
     <script src="assets/javascript/slideshow.js"></script>
 </body>
 </html>
