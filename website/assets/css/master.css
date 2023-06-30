@@ -51,6 +51,10 @@ a:hover {
     float: right;
 }
 
+    .title img {
+        width: 110px;
+    }
+
 .header h1 {
     font-size: 28px;
 }
@@ -125,7 +129,7 @@ a:hover {
     }
 
 .padder {
-    padding: 1% 20% 2% 20%;
+    padding: 1% 20% 4% 20%;
 }
 
 .spacer {
