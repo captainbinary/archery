@@ -404,3 +404,8 @@ form {
     min-height: 125px;
     background-color: #ff0000;
 }
+
+.big {
+    width: 100%!important;
+    height: 300px;
+}
