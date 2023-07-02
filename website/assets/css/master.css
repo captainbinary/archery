@@ -153,6 +153,20 @@ a, a:visited, a:link {
     height: 50px;
 }
 
+.images_horizontal {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 0;
+    max-width: 540px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+    .images_horizontal > div {
+        flex: 25%;
+    }
+
 
 
 /*--------------*/
@@ -199,6 +213,8 @@ form {
     width: 600px;
     text-align: left;
 }
+
+
 
 /*-------------------*/
 /*  SKEWs & COLOURS  */
@@ -378,20 +394,6 @@ form {
 /*--------------*/
 /*   MISC CSS   */
 /*--------------*/
-.images_horizontal {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 5%;
-    padding: 0;
-    max-width: 540px;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-.images_horizontal > div {
-    flex: 25%;
-}
-
 .fake_image {
     margin: 5px;
     padding: 0;
