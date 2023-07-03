@@ -153,6 +153,10 @@ a, a:visited, a:link {
     height: 50px;
 }
 
+.caption {
+    font-size: 12px;
+}
+
 .images_horizontal {
     display: flex;
     margin: 0 auto;
@@ -167,6 +171,10 @@ a, a:visited, a:link {
         flex: 25%;
     }
 
+    .images_horizontal img {
+        margin: 5px;
+        border: 1px solid #333333;
+    }
 
 
 /*--------------*/
