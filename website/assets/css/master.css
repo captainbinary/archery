@@ -116,6 +116,12 @@ a, a:visited, a:link {
     flex-wrap: wrap;
 }
 
+.col {
+    margin: 0;
+    padding: 0;
+    flex: 50%;
+}
+
 .main {
     margin: 0;
     padding: 0;
@@ -132,25 +138,12 @@ a, a:visited, a:link {
         font-size: 14px;
     }
 
-.main2 {
-    flex: 70%!important;
-}
-
-.sub {
-    flex: 30%!important;
-}
-
 .padder {
     padding: 1% 20% 4% 20%;
 }
 
 .spacer {
     margin: 30px auto;
-}
-
-.page_icon {
-    width: 50px;
-    height: 50px;
 }
 
 .caption {
@@ -176,7 +169,46 @@ a, a:visited, a:link {
         border: 1px solid #333333;
     }
 
+/* Only used in index, consider moving to it's own file for cleanliness */
+.times {
+    margin: 0 auto;
+    max-width: 80%;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 1px solid #000033;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+}
 
+.times .col:not(:first-child) {
+    border-left: 1px solid #000033;
+}
+
+    .times .col p:not(:first-child) {
+        font-size: 12px;
+        font-style: italic;
+    }
+
+.times .row:not(:first-child) {
+    border-top: 1px solid #000033;
+}
+
+.times_header {
+    font-size: 16px;
+}
+
+/* Only used in contact, consider moving to it's own file for cleanliness */
+.page_icon {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* Only used in contact, consider moving to it's own file for cleanliness */
 /*--------------*/
 /*   FORM CSS   */
 /*--------------*/
@@ -245,6 +277,15 @@ form {
     color: #336699;
 }
 
+/* Only used in index, consider moving to it's own file for cleanliness */
+.times .row:nth-child(even) {
+    background-color: #4573a3;
+}
+
+.times .row:nth-child(odd) {
+    background-color: #315b87;
+}
+
 
 /* Skew Clockwise */
 .skew-c {
@@ -285,17 +326,18 @@ form {
     .footer img {
         height: 50px;
     }
+    
+    .footer .row div {
+        padding: 20px;
+    }
 
-/* Layout */
-.footer_main {
-    flex: 70%;
-    padding: 20px;
-}
+    .footer .row div:first-child {
+        flex: 70%;
+    }
 
-.footer_side {
-    flex: 30%;
-    padding: 20px;
-}
+    .footer .row div:not(:first-child) {
+        flex: 30%;
+    }
 
 
 
@@ -345,6 +387,7 @@ form {
             flex: 50%;
         }
 
+    /* Only used in contact page, consider moving to it's own file for cleanliness */
     form {
         width: 450px;
     }
@@ -360,6 +403,7 @@ form {
         display: block;
     }
 
+    /* Layout Changes */
     .row, .navbar, .images_horizontal {
         flex-direction: column;
     }
@@ -368,6 +412,7 @@ form {
         padding: 6% 20%;
     }
 
+    /* Used on index, about and courses to make a responsive image container */
     .images_horizontal {
         max-width: 133px !important;
     }
@@ -375,6 +420,32 @@ form {
         .images_horizontal > div {
             flex: 100%;
         }
+
+    /* Where and When timing table -
+        This is only used on index, consider moving to it's own file for cleanliness */
+    .times_header {
+        display: none;
+    }
+
+    .times .col:not(:first-child) {
+        border: none;
+    }
+
+    .times .row:nth-child(-n + 2) {
+        border: none;
+    }
+
+    .times .row:nth-child(odd) {
+        background-color: #4573a3;
+    }
+
+    .times .row:nth-child(even) {
+        background-color: #315b87;
+    }
+
+    .mobile_header {
+        font-weight: bold;
+    }
 
     form {
         width: 300px;
@@ -387,6 +458,7 @@ form {
         display: block;
     }
 
+    /* Layout Changes */
     #nav_btn {
         display: none;
     }
@@ -395,7 +467,6 @@ form {
         flex-direction: row;
     }
 }
-
 
 
 
