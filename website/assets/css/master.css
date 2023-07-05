@@ -150,6 +150,11 @@ a, a:visited, a:link {
     font-size: 12px;
 }
 
+.single {
+    width: 100%;
+    max-width: 500px;
+}
+
 .images_horizontal {
     display: flex;
     margin: 0 auto;
