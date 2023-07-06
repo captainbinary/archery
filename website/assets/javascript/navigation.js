@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).on("load", function () {
     /*-----------------*/
     /*   SCREEN SIZE   */
     /*-----------------*/
@@ -13,7 +13,7 @@ $(document).ready(function () {
     /*   NAVIGATION   */
     /*----------------*/
     let show = 0;
-    $('#nav_btn').click(function () {
+    $('#nav_btn').on("click", function () {
 
         if ($('.navbar a').eq(1).css('display') == 'block') {
             console.log("Hiding Menu - advanced");
