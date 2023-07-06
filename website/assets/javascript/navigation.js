@@ -25,6 +25,24 @@ $(document).ready(function () {
     });
 });
 
+
+
+ /*---------------*/
+ /*   FUNCTIONS   */
+ /*---------------*/
+
+/*   SCREEN SIZE   */
+function handleDeviceChange(e) {
+    if (e.matches) {
+        console.log("Mobile");
+    }
+    else {
+        console.log("Bigger than mobile");
+        clearNavCSS();
+    }
+}
+
+/*   NAVIGATION   */
 function showMenu() {
     $('.navbar a').show();
 }
@@ -39,12 +57,3 @@ function clearNavCSS() {
     $('#nav_btn').removeAttr('style');
 }
 
-function handleDeviceChange(e) {
-    if (e.matches) {
-        console.log("Mobile");
-    }
-    else {
-        console.log("Bigger than mobile");
-        clearNavCSS();
-    }
-}
