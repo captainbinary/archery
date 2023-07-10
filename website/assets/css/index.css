@@ -26,10 +26,6 @@
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
 }
 
-    .times .col:not(:first-child) {
-        border-left: 1px solid #000033;
-    }
-
     .times .col p:not(:first-child) {
         font-size: 12px;
         font-style: italic;
@@ -39,8 +35,13 @@
         border-top: 1px solid #000033;
     }
 
+    .times .empty {
+        background-color: #315b87;
+    }
+
 .times_header {
     font-size: 16px;
+    background-color: #315479!important;
 }
 
 
@@ -53,7 +54,7 @@
 }
 
 .times .row:nth-child(odd) {
-    background-color: #315b87;
+    background-color: #5480ac;
 }
 
 /*-------------------*/
@@ -96,14 +97,6 @@
     /* Layout Changes */
     .times {}
 
-        .times .col:not(:first-child) {
-            border: none;
-        }
-
-        .times .row:nth-child(-n + 2) {
-            border: none;
-        }
-
         .times .row:nth-child(odd) {
             background-color: #4573a3;
         }
@@ -117,6 +110,6 @@
     }
 
     .times_header {
-        display: none;
+        /* display: none; */
     }
 }

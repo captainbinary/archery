@@ -152,22 +152,21 @@ a, a:visited, a:link {
 .images_horizontal {
     display: flex;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 14px;
     padding: 0;
-    max-width: 540px;
     text-align: center;
     flex-wrap: wrap;
+    overflow: hidden;
+    max-width: 620px;
 }
-
-    .images_horizontal > div {
-        flex: 25%;
-    }
-
     .images_horizontal img {
-        margin: 5px;
+        margin: 5px auto;
         border: 1px solid #333333;
     }
 
+    .images_horizontal > div {
+        flex: 25%
+    }
 
 
 /*-------------------*/
@@ -230,7 +229,8 @@ a, a:visited, a:link {
     }
 
     .footer img {
-        height: 50px;
+        height: 64px;
+        border: 1px solid #333333;
     }
     
     .footer .row div {
@@ -252,14 +252,9 @@ a, a:visited, a:link {
 /*--------------------*/
 @media (max-width: 920px)
 {
-    .images_horizontal {
-        max-width: 270px!important;
+    .images_horizontal > div {
+        flex: 50%;
     }
-
-        .images_horizontal > div {
-            flex: 50%;
-        }
-    
 }
 
 @media (max-width: 700px) {
@@ -281,14 +276,10 @@ a, a:visited, a:link {
         padding: 6% 20%;
     }
 
-    /* Used on about and courses to make a responsive image container */
-    .images_horizontal {
-        max-width: 133px !important;
-    }
 
-        .images_horizontal > div {
-            flex: 100%;
-        }
+    .images_horizontal > div {
+        flex: 25%;
+    }
 }
 
 @media (min-width: 701px) {
