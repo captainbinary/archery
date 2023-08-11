@@ -1,14 +1,4 @@
 $(window).on("load", function () {
-    /*-----------------*/
-    /*   SCREEN SIZE   */
-    /*-----------------*/
-    const mediaQuery = window.matchMedia('(max-width: 700px)');
-
-    mediaQuery.addEventListener("change", handleDeviceChange);
-    handleDeviceChange(mediaQuery);
-
-    
-
     /*----------------*/
     /*   NAVIGATION   */
     /*----------------*/
@@ -31,17 +21,6 @@ $(window).on("load", function () {
  /*   FUNCTIONS   */
  /*---------------*/
 
-/*   SCREEN SIZE   */
-function handleDeviceChange(e) {
-    if (e.matches) {
-        console.log("Mobile");
-    }
-    else {
-        console.log("Bigger than mobile");
-        clearNavCSS();
-    }
-}
-
 /*   NAVIGATION   */
 function showMenu() {
     $('.navbar a').show();
@@ -52,8 +31,5 @@ function hideMenu() {
     $('#nav_btn').show();
 }
 
-function clearNavCSS() {
-    $('.navbar a').removeAttr('style');
-    $('#nav_btn').removeAttr('style');
-}
+
 

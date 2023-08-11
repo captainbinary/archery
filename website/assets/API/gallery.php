@@ -1,7 +1,10 @@
 <?php
 $return = array(
 	"status" => 'success',
-	"output" => ''
+	"output" => array(
+		"pictures" => array(),
+		"total_pages" => ""
+	)
 );
 
 // Error checking and validation of required variables
@@ -47,7 +50,8 @@ if($confirm)
 
 	// Get pictures offset for pagination and get final data
 	$pictures_offset = ($page - 1) * $page_size;
-	$return['output'] = array_slice($pictures, $pictures_offset, $page_size);
+	$return['output']['pictures'] = array_slice($pictures, $pictures_offset, $page_size);
+	$return['output']['total_pages'] = $total_pages;
 
 }
 

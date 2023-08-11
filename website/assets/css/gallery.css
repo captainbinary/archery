@@ -1,15 +1,47 @@
-.gallery {
+#gallery {
     display: flex;
     flex-wrap: wrap;
 }
 
-    .gallery .images {
+    #gallery .images {
         margin: 0 auto;
     }
 
-        .gallery .images img {
-            width: 80%;
-            max-width: 300px;
+        #gallery .images img {
+            flex: 150px;
             margin: 6px;
-            flex: auto;
         }
+
+#pagination {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pagination a {
+    display: inline-grid;
+    width: 25px;
+    margin: 5px;
+    text-align: center;
+    vertical-align: bottom;
+    position: relative;
+}
+
+    #pagination .p_link_img {
+        font-size: 0px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #pagination .prev {
+        background-image: url("../images/left.png");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: center bottom -2px;
+    }
+
+    #pagination .next {
+        background-image: url("../images/right.png");
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: center bottom -2px;
+    }
