@@ -1,24 +1,19 @@
 let page_size;
 $(window).on("load", function () {
-    console.log("MESSAGE: First Run Procedure");
-    let page_number = 1;
+    console.log("MESSAGE: First Run");
+    let page = 1;
 
     // Calculate Size variable based on screen size
-    console.log("SIZECHECK: isMobile status: " + isMobile);
     if (isMobile) {
-        // User on a mobile
-        page_size = 1;
+        size = 1;
     } else {
-        // User on a desktop
-        page_size = 3;
+        size = 4;
     }
-    console.log("SIZECHECK: page_size: " + page_size);
 
-
-
-    $.post("assets/API/gallery.php", { page: page_number, size: page_size }, function (data) {
-        callResult(data);
-    }, "json");
+    $.post("assets/API/gallery.php", { page: page, size: size },
+        function (data) {
+            callResult(data);
+        }, "json");
 });
 
 
@@ -29,85 +24,92 @@ $(window).on("load", function () {
 
 /* something */
 function callResult(data) {
-    console.log("DATA - JSON: " + data);
+    console.log("FUNCTION CALL: callResult");
+    console.log("DATA: " + JSON.stringify(data));
+
+    // do data validation / error handling
+    let pass = true;
+    let error = "";
+
+    if (data.status != "success") {
+        pass = false;
+    }
     console.log("MESSAGE: Checking API Result status: " + data.status);
 
 
+    if (pass) {
+        // Clear old data and handlers
+        clearOld();
 
-    // do data validation / error handling
+        // Create new pictures
+        createPictures(data.output.pictures);
 
+        // Create Pagination
+        createPagination(data.output.total_pages);
 
-
-    clearHTML();
-    constructPictures(data);
-    constructLinks(data.output.total_pages);
+        // Create interactive handlers
+        createLinks();
+    } else {
+        alert("Error, data did not pass validation.");
+    }
 }
 
-function setupClicks() {
-    $('#pagination').on("click.pagination", "a", function (event) {
-        event.preventDefault;
-
-        console.log("TESTING " + this);
-        
-
-        let page_number = $(this).html();
-
-
-
-        console.log("Click event. Contains : " + page_number);
-
-        if (isMobile) {
-            // User on a mobile
-            page_size = 1;
-        } else {
-            // User on a desktop
-            page_size = 3;
-        }
-
-        $.post("assets/API/gallery.php", { page: page_number, size: page_size }, function (data) {
-            callResult(data);
-        }, "json");
-        return false;
-    });
-}
-
-function removeClicks() {
-    $('#pagination').off(".pagination");
-
-}
-
-function clearHTML() {
-    console.log("MESSAGE: Clearing Event Handlers");
-    // Remove events from pagination and images
-    removeClicks();
+function clearOld() {
+    console.log("FUNCTION CALL: clearOld");
 
     console.log("MESSAGE: Clearing HTML");
     $('#gallery .images').html('<img src="assets/images/loading2.gif" alt="loading" />');
     $('#pagination').html('');
+
+    console.log("MESSAGE: Clearing Handlers");
+    $('#gallery .images').off("gallery");
+    $('#pagination').off("pagination");
 }
 
-function constructPictures(data) {
-    console.log("MESSAGE: Constructing Picture HTML with ajax data.");
-    const pictures = data.output.pictures;
-    console.log(pictures);
+function createPictures(pictures) {
+    console.log("FUNCTION CALL: createPictures");
+
     let html = "";
     $.each(pictures, function (k, v) {
-        html += '<img class="click" src="assets/gallery/thumbnail.php?file=' + v + '" alt="' + v +'" />';
+        html += '<img src="assets/gallery/thumbnail.php?file=' + v + '" data-fullscreen="' + v + '" alt="' + v + '" />';
     });
-
     $('#gallery .images').html(html);
 }
 
-function constructLinks(total_pages) {
-    console.log("MESSAGE: Constructing Pagination Links");
-    let html = '<a href="prev" data-direction="Prev" class="p_link_img prev">prev</a>';
-    for (let i = 1; i <= total_pages; i++) {
+function createPagination(total) {
+    console.log("FUNCTION CALL: createPagination");
+
+    let html = "";
+    for (let i = 1; i <= total; i++) {
         html += '<a href="' + i + '" class="p_link_number">' + i + '</a>';
     }
-    html += '<a href="next" data-direction="Next" class="p_link_img next">next</a>';
-
     $('#pagination').html(html);
+}
 
-    // add click events to pagination
-    setupClicks();
+function createLinks() {
+    console.log("FUNCTION CALL: createLinks");
+
+    // Gallery images
+    $('#gallery .images').on("click.gallery", "img", function (e) {
+        this.requestFullscreen();
+    });
+
+    // Pagination
+    $('#pagination').on("click.pagination", "a", function (e) {
+        e.preventDefault;
+
+        let page = $(this).html();
+        if (isMobile) {
+            size = 1;
+        } else {
+            size = 4;
+        }
+
+        $.post("assets/API/gallery.php", { page: page, size: size },
+            function (data) {
+                callResult(data);
+            }, "json");
+
+        return false;
+    });
 }
