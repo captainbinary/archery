@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/master.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/gallery.css" />
+    <link rel="stylesheet" href="assets/photoswipe/dist/photoswipe.css">
 </head>
 <body>
     <!-- Gallery Enlarge View -->
@@ -91,5 +92,16 @@
     <script src="assets/javascript/master.js"></script>
     <script src="assets/javascript/navigation.js"></script>
     <script src="assets/javascript/gallery.js"></script>
+    <script type="module">
+        import PhotoSwipeLightbox from './assets/photoswipe/dist/photoswipe-lightbox.esm.js';
+        import PhotoSwipe from './assets/photoswipe/dist/photoswipe.esm.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            showHideAnimationType: 'none',
+            pwspModule: PhotoSwipe,
+            preload: [1, 2]
+        });
+        lightbox.init();
+    </script>
 </body>
 </html>

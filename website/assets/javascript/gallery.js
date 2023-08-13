@@ -1,4 +1,6 @@
 let page_size;
+
+
 $(window).on("load", function () {
     console.log("MESSAGE: First Run");
     let page = 1;
